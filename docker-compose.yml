@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    exemple.php:
+        image: elitonluiz1989/php
+
+        container_name: exemple.php
+
+        ports: 
+            - "80:80"
+            - "9000:9000"
+
+        volumes: 
+            - ./exemple/:/var/wwww/html/
+            - ./exemple/vhost.conf:/etc/apache2/sites-available/000-default.conf
+
+        working_dir: /var/wwww/html/
